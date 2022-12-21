@@ -19,6 +19,7 @@ const sendForm = event => {
     message: inputMassege.value,
   };
   console.log(formData);
+  localStorage.clear();
   form.reset();
 };
 
