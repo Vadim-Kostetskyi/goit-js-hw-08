@@ -4,7 +4,7 @@ const inputMassege = form.message;
 const save = 'feedback-form-state';
 const localMemory = localStorage.getItem(save);
 const localMemoryObject = JSON.parse(localMemory);
-const _ = require('lodash');
+import _ from 'lodash';
 
 if (localMemoryObject !== null) {
   inputEmail.value = localMemoryObject.email;
@@ -19,7 +19,7 @@ const sendForm = event => {
     message: inputMassege.value,
   };
   console.log(formData);
-  localStorage.clear();
+  localStorage.removeItem(save);
   form.reset();
 };
 
