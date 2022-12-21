@@ -17,10 +17,21 @@ const sendForm = event => {
     email: inputEmail.value,
     message: inputMassege.value,
   };
-  const formDataSave = JSON.stringify(formData);
-  localStorage.setItem(save, formDataSave);
-  console.log(formDataSave);
+  console.log('email:' + formData.email);
+  console.log('message' + formData.message);
   form.reset();
 };
 
 form.addEventListener('submit', sendForm);
+
+form.addEventListener(
+  'input',
+  _.throttle(() => {
+    let formData = {
+      email: inputEmail.value,
+      message: inputMassege.value,
+    };
+    let formDataSave = JSON.stringify(formData);
+    localStorage.setItem(save, formDataSave);
+  }, 500)
+);
