@@ -17,8 +17,8 @@ const sendForm = event => {
     email: inputEmail.value,
     message: inputMassege.value,
   };
-  console.log('email:' + formData.email);
-  console.log('message' + formData.message);
+  console.log('email: ' + formData.email);
+  console.log('message: ' + formData.message);
   form.reset();
 };
 
